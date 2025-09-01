@@ -1,0 +1,50 @@
+# ---------------------------------------------------
+# Configuration for the Streamflow Analysis Project
+# ---------------------------------------------------
+
+# The root directory where all data is stored.
+base_path: "C:/Research_Data"
+
+# Data paths
+paths:
+  # Streamflow data paths
+  observed: "observed_streamflow/data1960"
+  elnino: "simulated_streamflow/empirical/One_elnino_simulated_streamflow"
+  lanina: "simulated_streamflow/empirical/negative_one_lanina_streamflows"
+  baseline: "Baseline_streamflow_simulation"  # NEW: Baseline simulations
+  coordinates: "coordinates/station_coordinates.txt"
+  
+  # Basin characteristics data path
+  basin_characteristics: "basin_stuff/filtered_basin_characteristics"
+
+# File search patterns
+filenames:
+  observed_pattern: "filtered_site_*_daily_discharge.txt"
+  elnino_pattern: "+1elnino_flows_*.txt"
+  lanina_pattern: "-1lanina_flows_*.txt"
+  baseline_pattern: "simulated_*.txt"  # NEW: Baseline pattern
+
+# Directory where all plots and results will be saved.
+output_dir: "./pdf_output"
+
+# Subdirectories within output_dir for different analysis types
+analysis_subdirs:
+  basin_analysis: "comprehensive_basin_analysis"
+  simple_climate: "simple_climate_plots"
+  enso_analysis: "enso_analysis"
+  all_conditions_analysis: "all_conditions_analysis"  # NEW: For 4-way comparisons
+
+# Analysis configuration parameters
+analysis_params:
+  # Correlation synchrony parameters
+  correlation_threshold: 0.7
+  fraction_threshold: 0.5
+  max_radius_km: 4000
+  radius_step_km: 25
+  
+  # Multiple regression parameters
+  min_stations_for_regression: 30
+  cross_validation_folds: 5
+  
+  # Regional analysis parameters
+  min_stations_per_region: 10

@@ -1,0 +1,8 @@
+
+# Ignore all generated plots and figures
+*.png
+*.jpg
+*.pdf
+
+# Ignore Python cache files
+__pycache__/
